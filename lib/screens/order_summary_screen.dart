@@ -41,13 +41,14 @@ class OrderSummaryScreen extends StatelessWidget {
                 cartProvider.clearCart(); // Clear cart after confirmation
                 Navigator.popUntil(context, ModalRoute.withName('/'));
               },
-              child: Text('Confirm Order'),
+              child: Text('Confirm Order',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 textStyle: TextStyle(fontSize: 16),
+                backgroundColor: Colors.green
               ),
             ),
-          ],
+          ],  
         ),
       ),
     );

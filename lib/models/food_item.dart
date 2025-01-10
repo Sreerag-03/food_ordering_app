@@ -3,14 +3,14 @@ class FoodItem {
   final String name;
   final String imageUrl;
   final double price; 
-  final double quantity;
+  int quantity;
 
   FoodItem({
     required this.id,
     required this.name,
     required this.imageUrl,
     required this.price,
-    required this.quantity,
+    this.quantity = 1,
   });
 
   factory FoodItem.fromJson(Map<String, dynamic> json) {

@@ -47,6 +47,36 @@ class CartProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void increaseQuantity(String id) {
+    _items.update(
+      id,
+      (existingItem) => FoodItem(
+        id: existingItem.id,
+        name: existingItem.name,
+        imageUrl: existingItem.imageUrl,
+        price: existingItem.price,
+        quantity: existingItem.quantity + 1,
+      ),
+    );
+    notifyListeners();
+  }
+
+  void decreaseQuantity(String id) {
+    if (_items.containsKey(id) && _items[id]!.quantity > 1) {
+      _items.update(
+        id,
+        (existingItem) => FoodItem(
+          id: existingItem.id,
+          name: existingItem.name,
+          imageUrl: existingItem.imageUrl,
+          price: existingItem.price,
+          quantity: existingItem.quantity - 1,
+        ),
+      );
+    }
+    notifyListeners();
+  }
+
   Future<void> _saveCartData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String cartData = jsonEncode(

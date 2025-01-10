@@ -20,25 +20,53 @@ class CartScreen extends StatelessWidget {
                   leading: Image.network(item.imageUrl),
                   title: Text(item.name),
                   subtitle: Text('\$${item.price}'),
-                  trailing: IconButton(
-                    icon: Icon(Icons.remove_circle),
-                    onPressed: () {
-                      cartProvider.removeItem(item.id);
-                    },
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.remove),
+                        onPressed: () {
+                          cartProvider.decreaseQuantity(item.id);
+                        },
+                      ),
+                      Text(item.quantity.toString()),
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {
+                          cartProvider.increaseQuantity(item.id);
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.remove_circle),
+                        onPressed: () {
+                          cartProvider.removeItem(item.id);
+                        },
+                      ),
+                    ],
                   ),
                 );
               },
             ),
           ),
-          Text('Total: \$${cartProvider.totalPrice.toStringAsFixed(2)}'),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/summary');
-            },
-            child: Text('Proceed to Checkout'),
+          Padding(
+            padding: const EdgeInsets.only(bottom:8.0),
+            child: Text('Total: \$${cartProvider.totalPrice.toStringAsFixed(2)}',style: TextStyle(fontWeight: FontWeight.bold),),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom:18.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/summary');
+              },
+              child: Text('Proceed to Checkout',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 }
+
