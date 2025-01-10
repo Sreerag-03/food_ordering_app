@@ -9,10 +9,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<FoodItem> foodItems = [
-    FoodItem(id: '1', name: 'Burger', imageUrl: 'https://via.placeholder.com/150', price: 5.99),
-    FoodItem(id: '2', name: 'Pizza', imageUrl: 'https://via.placeholder.com/150', price: 9.99),
-    FoodItem(id: '3', name: 'Pasta', imageUrl: 'https://via.placeholder.com/150', price: 7.99),
-    FoodItem(id: '4', name: 'Sandwich', imageUrl: 'https://via.placeholder.com/150', price: 4.99),
+    FoodItem(id: '1', name: 'Burger', imageUrl: 'https://www.thespruceeats.com/thmb/UpVWAcHnFEe_KvQpYsR1a7U-WY0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-your-best-grilled-burger-recipe-7511041-hero-C-c5080fa5f97c4c2b908968527f8a851b.jpg', price: 5.99),
+    FoodItem(id: '2', name: 'Pizza', imageUrl: 'https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg', price: 9.99),
+    FoodItem(id: '3', name: 'Pasta', imageUrl: 'https://www.vincenzosplate.com/wp-content/uploads/2021/08/610x350-Photo-4_862-How-to-Make-CHICKEN-PASTA-Like-an-Italian-V1.jpg', price: 7.99),
+    FoodItem(id: '4', name: 'Sandwich', imageUrl: 'https://wiproappliances.com/cdn/shop/articles/Veg_grilled_cheese_sandwich.jpg?v=1714126819', price: 4.99),
   ];
 
   List<FoodItem> filteredItems = [];

@@ -2,7 +2,7 @@ class FoodItem {
   final String id;
   final String name;
   final String imageUrl;
-  final double price;
+  final double price; 
 
   FoodItem({
     required this.id,
